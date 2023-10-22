@@ -1,7 +1,7 @@
 function utils(schema, input) {
     return async function (req, res, next) {
         try {
-            const result = await schema.validate(req[input]);
+            const result = await schema.validate(req[input])
             if (result.error) {
                 return res.status(400).send({ error: 'Yes', value: result.error.toString() })
             }else{
