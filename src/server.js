@@ -1,5 +1,6 @@
 // Importing Modules
 const { express, fileUploader } = require("./config/importModulesConfig")
+const swaggerDocs = require('./utils/swagger')
 
 // Creating App
 const app = express()()
@@ -12,7 +13,11 @@ app.use(require("./apis/middlewares/consoller"))
 
 app.get("/", (req, res) => res.send({ error: "No", value: "App is working properly" }))
 
+
 app.use(require("./apis/routes/uploadRoute"))
+
+swaggerDocs(app)
+
 
 // For catching route not found
 app.use((req, res) => res.status(404).send({ error: "Yes", value: "Route not found" }))
