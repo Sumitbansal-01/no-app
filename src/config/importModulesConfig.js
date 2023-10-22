@@ -5,5 +5,7 @@ module.exports = {
     readable: () => require('stream'),
     fs: () => require('fs'),
     fileUploader: () => require("express-fileupload"),
-    dotenv: () => require('dotenv').config()
+    dotenv: () => require('dotenv').config(),
+    swaggerUi: () => require("swagger-ui-express"),
+    swaggerJsdoc: () => require("swagger-jsdoc")
 };
